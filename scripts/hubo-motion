@@ -287,13 +287,24 @@ TeleopHubo()
 		echo
 	;;
 
+       'virtualHubo')
+	echo 'Using virtualhubo'    
+	hubo-ach sim openhubo nophysics simtime drc &
+	Ach
+	sudo control-daemon -s
+	    
+	StartMotionDaemons
+	while : 
+	do
+	    sleep 5;
+	done
+	ps -ef | grep virtualHubo | grep -v grep | awk '{print $2}' | xargs kill
+
+	;;
 	*)
-	
-		Ach
-
-        sudo hubo-ach daemon drc
-
-	    sudo control-daemon
+	sudo hubo-ach daemon drc
+        Ach	
+        sudo control-daemon -s
         StartMotionDaemons
 
         echo
