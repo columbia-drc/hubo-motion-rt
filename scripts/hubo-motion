@@ -218,8 +218,8 @@ StopHubo()
 
 StartMotionDaemons()
 {
-    sudo manip-daemon
-    sudo balance-daemon
+    manip-daemon
+    balance-daemon
 }
 
 CtrlHubo()
@@ -236,9 +236,9 @@ CtrlHubo()
 
     *)
         Ach
-        sudo hubo-ach make
+        sudo -E hubo-ach make
 
-        sudo control-daemon -s -t
+        sudo -E control-daemon -s -t
 
     ;;
     esac
