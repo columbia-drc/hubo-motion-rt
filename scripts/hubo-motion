@@ -129,7 +129,8 @@ Ach()
 	;;	
 
 	*)
-
+	echo 
+	echo 'Creating channels' 
         sudo ach -1 -C $HUBO_CTRL_STATE_CHAN    -m 10 -n 6000 -o 666
         sudo ach -1 -C $HUBO_REF_CHAN           -m 10 -n 3000 -o 666
         sudo ach -1 -C $HUBO_STATE_CHAN         -m 10 -n 8000 -o 666
