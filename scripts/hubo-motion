@@ -218,7 +218,8 @@ StopHubo()
 
 StartMotionDaemons()
 {
-    manip-daemon
+    export LD_LIBRARY_PATH=/opt/ros/groovy/lib/
+    manip-daemon 
     balance-daemon
 }
 
