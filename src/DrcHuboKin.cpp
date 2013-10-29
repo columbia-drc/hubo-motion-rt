@@ -13,9 +13,11 @@ DrcHuboKin::DrcHuboKin()
 {
     linkages_.resize(0);
 
-
+    char* robotPath;
+    robotPath = getenv ("ROBOT_URDF_PATH");
     if( !RobotKinURDF::loadURDF(*this, "/etc/hubo-ach/drchubo_v3.urdf") )
-         RobotKinURDF::loadURDF(*this, "/etc/hubo-ach/drchubo-v3.urdf");
+      if( !RobotKinURDF::loadURDF(*this, "/etc/hubo-ach/drchubo-v3.urdf"))
+	RobotKinURDF::loadURDF(*this, robotPath))
 
 
 
